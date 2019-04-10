@@ -54,6 +54,11 @@ class TestLab1(unittest.TestCase):
         with self.assertRaises(ValueError):
             bin_search(0, 0, 0, list_val)
 
+    def test_bin_search_empty_list(self):
+        """check if None returned for empty list"""
+        list_val = []
+        self.assertIsNone(bin_search(0, 0, len(list_val)-1, list_val))
+
     def test_bin_search_no_target(self):
         """check if None returned for target not found"""
         list_val = [0,1,2,3,4]
