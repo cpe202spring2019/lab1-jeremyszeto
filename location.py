@@ -1,3 +1,5 @@
+from math import *
+
 # CPE 202 Lab 0
 # represents a location using name, latitude and longitude
 class Location:
@@ -8,7 +10,7 @@ class Location:
 
 # ADD BOILERPLATE HERE (__eq__ and __repr__ functions)
     def __eq__(self, other):
-        return(type(other) == Location and self.name == other.name and self.lat == other.lat and self.lon == other.lon)
+        return(type(other) == Location and self.name == other.name and isclose(self.lat, other.lat) and isclose(self.lon, other.lon))
 
     def __repr__(self):
         return("Location('{}', {}, {})".format(self.name, self.lat, self.lon))
