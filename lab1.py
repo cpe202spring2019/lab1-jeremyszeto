@@ -29,7 +29,7 @@ def reverse_rec(int_list):   # must use recursion
    if len(int_list) == 1:
       return int_list
 # else return last item in list added to reversed list slice excluding last item until all items accounted for
-   return [int_list[-1]] + reverse_rec(int_list[0:-1])
+   return reverse_rec(int_list[1:len(int_list)]) + int_list[0:1]
 
 
 def bin_search(target, low, high, int_list):  # must use recursion
@@ -42,7 +42,7 @@ def bin_search(target, low, high, int_list):  # must use recursion
    if len(int_list) == 0:
       return None
 # if high index lower than low index, return none since this should be impossible
-   if not low < high:
+   if low > high:
       return None
 # binary search algorithm
    middle = (high + low) // 2
